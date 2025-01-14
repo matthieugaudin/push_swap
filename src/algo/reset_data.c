@@ -6,11 +6,36 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 17:36:35 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/09 18:15:17 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/01/14 09:56:21 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+static int	get_special_cost(t_stack *a, int len_a, int len_b)
+{
+	int	a_cost;
+	int	b_cost;
+	int	res;
+
+	if (a->above_median && a->target->above_median)
+	{
+		a_cost = len_a - a->pos;
+		b_cost = len_b - a->target->pos;
+	}
+	else
+	{
+		a_cost = a->pos;
+		b_cost = a->target->pos;
+	}
+	if (a_cost < b_cost)
+		res = a_cost + (b_cost - a_cost);
+	else
+		res = b_cost + (a_cost - b_cost);
+	if (a_cost == b_cost)
+		res = a_cost;
+	return (res);
+}
 
 static void	calc_push_cost(t_stack *a, t_stack *b)
 {
@@ -23,13 +48,19 @@ static void	calc_push_cost(t_stack *a, t_stack *b)
 	len_b = stack_len(b);
 	while (a)
 	{
-		a->push_cost = len_a - a->pos;
-		if (!(a->above_median))
-			a->push_cost = a->pos;
-		if (a->target->above_median)
-			a->push_cost += len_b - a->target->pos;
-		else if (!(a->target->above_median))
-			a->push_cost += a->target->pos;
+		if (a->above_median && a->target->above_median
+			|| !(a->above_median) && !(a->target->above_median))
+			a->push_cost = get_special_cost(a, len_a, len_b);
+		else
+		{
+			a->push_cost = len_a - a->pos;
+			if (!(a->above_median))
+				a->push_cost = a->pos;
+			if (a->target->above_median)
+				a->push_cost += len_b - a->target->pos;
+			else if (!(a->target->above_median))
+				a->push_cost += a->target->pos;
+		}
 		a = a->next;
 	}
 }
@@ -37,7 +68,7 @@ static void	calc_push_cost(t_stack *a, t_stack *b)
 static void	set_target_a(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp_b;
-	t_stack	*max_b;
+	t_stack	*max_b; 
 
 	tmp_b = b;
 	max_b = get_max(b);
