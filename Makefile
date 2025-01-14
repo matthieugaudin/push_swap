@@ -1,5 +1,6 @@
 NAME = push_swap
-CC = cc -g
+NAME_BONUS = checker
+CC = cc
 CCFLAGS = -Wall -Wextra -Werror
 LIBFT = libft.a
 LIBFT_DIR = libft
@@ -11,22 +12,22 @@ SRC =	src/algo/reset_data.c src/algo/sort_stack.c src/algo/sort_three.c \
 		src/utils/init_stack_a.c src/utils/send_error.c src/utils/stack_len.c \
 		src/utils/stack_sorted.c src/utils/update_pos.c src/main.c
 
-# SRC_BONUS = 
+SRC_BONUS = checker_bonus/parsing.c checker_bonus/main_bonus.c \
+			checker_bonus/utils_bonus.c
 
 OBJ = $(SRC:.c=.o)
-#
-
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all: $(LIBFT) $(NAME)
 
 $(LIBFT):
-	@$(MAKE) -C $(LIBFT_DIR) all
+	@$(MAKE) -C $(LIBFT_DIR) bonus
 
 $(NAME): $(OBJ)
 	$(CC) $(CCFLAGS) $(OBJ) -o $(NAME) $(LIBFT_DIR)/$(LIBFT)
 
-# bonus: $(LIBFT) $(OBJ_BONUS)	
-# 	$(CC) $(CCFLAGS) $(OBJ_BONUS) -o $(NAME) $(LIBFT_DIR)/$(LIBFT)
+bonus: $(LIBFT) $(OBJ_BONUS)	
+	$(CC) $(CCFLAGS) $(OBJ_BONUS) -o $(NAME_BONUS) $(LIBFT_DIR)/$(LIBFT)
 
 %.o: %.c
 	$(CC) $(FLAGS) -o $@ -c $^
@@ -36,7 +37,7 @@ clean:
 	@$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME_BONUS)
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
