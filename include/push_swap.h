@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 16:55:53 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/09 18:09:20 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/01/14 10:44:00 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,14 @@ typedef struct s_stack
 	int					pos;
 	int					push_cost;
 	int					above_median;
-	struct s_stack	*target;
-	struct s_stack	*prev;
-	struct s_stack	*next;
+	struct s_stack		*target;
+	struct s_stack		*prev;
+	struct s_stack		*next;
 }	t_stack;
 
-/*ALGO*/
 void	sort_stack(t_stack **a, t_stack **b);
 void	sort_three(t_stack **a);
-void    reset_data(t_stack *a, t_stack *b, char stack_name);
-
-/*MOVES*/
+void	reset_data(t_stack *a, t_stack *b, char stack_name);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
 void	rra(t_stack **a, int show_msg);
@@ -47,9 +44,6 @@ void	sb(t_stack **b, int show_msg);
 void	ss(t_stack **a, t_stack **b);
 void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *to_move);
 void	rotate_both(t_stack **a, t_stack **b, t_stack *to_move);
-
-
-/*UTILS*/
 void	free_stack_a(t_stack **a);
 void	free_tab(char **tab);
 t_stack	*get_last(t_stack **head);
@@ -61,6 +55,5 @@ int		stack_len(t_stack *node);
 int		stack_sorted(t_stack *node);
 void	update_pos(t_stack *node);
 t_stack	*get_cheapest(t_stack *node);
-
 
 #endif /* PUSH_SWAP_H */

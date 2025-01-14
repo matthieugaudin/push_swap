@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 17:36:35 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/14 09:56:21 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/01/14 10:42:00 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	calc_push_cost(t_stack *a, t_stack *b)
 static void	set_target_a(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp_b;
-	t_stack	*max_b; 
+	t_stack	*max_b;
 
 	tmp_b = b;
 	max_b = get_max(b);
@@ -117,8 +117,7 @@ static void	set_target_b(t_stack *a, t_stack *b)
 	}
 }
 
-
-void    reset_data(t_stack *a, t_stack *b, char stack_name)
+void	reset_data(t_stack *a, t_stack *b, char stack_name)
 {
 	update_pos(a);
 	update_pos(b);

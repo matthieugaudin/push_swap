@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 17:06:24 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/10 10:19:34 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/01/14 10:41:11 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void	move_a_to_b(t_stack **a, t_stack **b)
 	node_to_top(a, to_move, 'a');
 	node_to_top(b, to_move->target, 'b');
 	pb(a, b);
-}\
+}
 
 static void	move_b_to_a(t_stack **a, t_stack **b)
 {
@@ -76,7 +76,7 @@ void	sort_stack(t_stack **a, t_stack **b)
 	int	len_a;
 
 	len_a = stack_len(*a);
- 	if (len_a-- > 3 && !stack_sorted(*a))
+	if (len_a-- > 3 && !stack_sorted(*a))
 		pb(a, b);
 	if (len_a-- > 3 && !stack_sorted(*a))
 		pb(a, b);
