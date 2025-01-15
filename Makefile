@@ -1,6 +1,6 @@
 NAME = push_swap
 NAME_BONUS = checker
-CC = cc -g
+CC = cc
 CCFLAGS = -Wall -Wextra -Werror
 LIBFT = libft.a
 LIBFT_DIR = libft
