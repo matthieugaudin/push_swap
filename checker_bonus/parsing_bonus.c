@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:13:07 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/14 11:41:10 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/01/15 10:54:09 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,16 @@ static int	handle_nbr(char *arg)
 	return (1);
 }
 
-static int	is_doubles(t_list *node)
+static int	is_doubles(t_stack *node)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	while (node)
 	{
 		tmp = node->next;
 		while (tmp)
 		{
-			if (node->content == tmp->content)
+			if (node->value == tmp->value)
 				return (0);
 			tmp = tmp->next;
 		}
@@ -81,45 +81,45 @@ static int	is_doubles(t_list *node)
 	return (1);
 }
 
-static int	append_node(t_list **a, int nb, int i)
+static int	append_node(t_stack **a, int nb, int i)
 {
-	t_list	*node;
-	int		*value;
+	t_stack	*node;
 
-	value = malloc(sizeof(int));
-	if (!value)
-		return (1);
-	*value = nb;
-	node = ft_lstnew((void *)value);
+	node = malloc(sizeof(t_stack));
 	if (!node)
 		return (1);
-	ft_lstadd_back(a, node);
+	if (i == 0)
+		*a = node;
+	node->value = nb;
+	node->pos = i;
+	node->target = NULL;
+	node->prev = NULL;
+	if (i > 0)
+	{
+		node->prev = get_last(a);
+		node->prev->next = node;
+	}
+	node->next = NULL;
 	return (0);
 }
 
-void	parse_data(t_list **a, char **argv, int argc)
+void	parse_data(t_stack **a, char **argv, int argc)
 {
 	int		i;
 	long	nb;
 
-	if (argc == 2)
-		argv = ft_split(argv[0], ' ');
-	if (!argv || !(*argv))
-		send_error(a, argv, argc);
 	i = 0;
 	while (argv[i])
 	{
 		if (!handle_nbr(argv[i]))
-			send_error(a, argv, argc);
+			send_error(a, NULL, NULL, NULL);
 		nb = ft_atol(argv[i]);
 		if (nb == 2147483648)
-			send_error(a, argv, argc);
+			send_error(a, NULL, NULL, NULL);
 		if (append_node(a, nb, i))
-			send_error(a, argv, argc);
+			send_error(a, NULL, NULL, NULL);
 		i++;
 	}
 	if (!is_doubles(*a))
-		send_error(a, argv, argc);
-	if (argc == 2)
-		free_tab(argv);
+		send_error(a, NULL, NULL, NULL);
 }

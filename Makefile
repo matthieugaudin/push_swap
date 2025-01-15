@@ -1,6 +1,6 @@
 NAME = push_swap
 NAME_BONUS = checker
-CC = cc
+CC = cc -g
 CCFLAGS = -Wall -Wextra -Werror
 LIBFT = libft.a
 LIBFT_DIR = libft
@@ -12,8 +12,11 @@ SRC =	src/algo/reset_data.c src/algo/sort_stack.c src/algo/sort_three.c \
 		src/utils/init_stack_a.c src/utils/send_error.c src/utils/stack_len.c \
 		src/utils/stack_sorted.c src/utils/update_pos.c src/main.c
 
-SRC_BONUS = checker_bonus/parsing.c checker_bonus/main_bonus.c \
-			checker_bonus/utils_bonus.c
+SRC_BONUS = checker_bonus/parsing_bonus.c checker_bonus/main_bonus.c \
+			checker_bonus/utils_bonus.c checker_bonus/get_next_line_bonus.c \
+			checker_bonus/utils_1_bonus.c checker_bonus/push_bonus.c \
+			checker_bonus/rotate_bonus.c checker_bonus/reverse_rotate_bonus.c \
+			checker_bonus/swap_bonus.c
 
 OBJ = $(SRC:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
