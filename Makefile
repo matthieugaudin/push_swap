@@ -21,15 +21,16 @@ SRC_BONUS = checker_bonus/parsing_bonus.c checker_bonus/main_bonus.c \
 OBJ = $(SRC:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
-all: $(LIBFT) $(NAME)
-
-$(LIBFT):
-	@$(MAKE) -C $(LIBFT_DIR) bonus
+all: $(NAME)
 
 $(NAME): $(OBJ)
+	@$(MAKE) -C $(LIBFT_DIR)
 	$(CC) $(CCFLAGS) $(OBJ) -o $(NAME) $(LIBFT_DIR)/$(LIBFT)
 
-bonus: $(LIBFT) $(OBJ_BONUS)	
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(OBJ_BONUS)
+	@$(MAKE) -C $(LIBFT_DIR) bonus
 	$(CC) $(CCFLAGS) $(OBJ_BONUS) -o $(NAME_BONUS) $(LIBFT_DIR)/$(LIBFT)
 
 %.o: %.c
@@ -45,4 +46,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all bonus clean fclean re 
