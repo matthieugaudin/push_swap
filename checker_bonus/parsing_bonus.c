@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:13:07 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/15 10:54:09 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/01/16 09:30:09 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ static int	append_node(t_stack **a, int nb, int i)
 	return (0);
 }
 
-void	parse_data(t_stack **a, char **argv, int argc)
+void	parse_data(t_stack **a, char **argv)
 {
 	int		i;
 	long	nb;

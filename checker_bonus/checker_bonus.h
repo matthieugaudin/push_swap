@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:02:08 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/15 11:05:29 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/01/16 09:30:18 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 	struct s_stack		*next;
 }	t_stack;
 
-void	parse_data(t_stack **a, char **argv, int argc);
+void	parse_data(t_stack **a, char **argv);
 void	send_error(t_stack **a, t_stack **b, t_list **moves, char *line);
 void	free_stack_a(t_stack **a);
 void	free_tab(char **tab);

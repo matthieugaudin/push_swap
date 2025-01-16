@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:46:29 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/15 11:06:04 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/01/16 09:31:43 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ static void	exec_move(t_stack **a, t_stack **b, t_list *move)
 static int	add_move(t_list **moves, char *move)
 {
 	t_list	*to_append;
-	t_list	*last_move;
 
 	to_append = malloc(sizeof(t_list));
 	if (!to_append)
@@ -93,7 +92,6 @@ static void	exec_moves(t_stack **a, t_stack **b)
 	t_list	*moves;
 	t_list	*tmp_moves;
 	char	*line;
-	char	*move;
 
 	moves = NULL;
 	line = get_next_line(0, 5, 0);
@@ -125,7 +123,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
-	parse_data(&a, argv + 1, argc);
+	parse_data(&a, argv + 1);
 	exec_moves(&a, &b);
 	if (stack_sorted(a) && !(b))
 		write(1, "OK\n", 3);

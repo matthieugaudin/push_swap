@@ -34,7 +34,7 @@ $(NAME_BONUS): $(OBJ_BONUS)
 	$(CC) $(CCFLAGS) $(OBJ_BONUS) -o $(NAME_BONUS) $(LIBFT_DIR)/$(LIBFT)
 
 %.o: %.c
-	$(CC) $(FLAGS) -o $@ -c $^
+	$(CC) $(CCFLAGS) -o $@ -c $^
 
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS)

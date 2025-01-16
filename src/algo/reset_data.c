@@ -6,7 +6,7 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 17:36:35 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/14 10:42:00 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/01/16 09:29:37 by mgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static void	calc_push_cost(t_stack *a, t_stack *b)
 	len_b = stack_len(b);
 	while (a)
 	{
-		if (a->above_median && a->target->above_median
-			|| !(a->above_median) && !(a->target->above_median))
+		if ((a->above_median && a->target->above_median)
+			|| (!a->above_median && !a->target->above_median))
 			a->push_cost = get_special_cost(a, len_a, len_b);
 		else
 		{
