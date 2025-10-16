@@ -68,12 +68,31 @@ make bonus  # Compile the checker
 ```
 
 6. Launch the checker
+```bash
+./checker ...
+```
 
-
+## Stack implmentation
+First, to understand the algorithm, let's see how i represented The stack. Each stack is a set of nodes, so i decieded
+to use a link list to implement the stacks A and B. Each node is composed of different useful data for the sets operations.
+Here's the structure i chosed to use.
+'''
+typedef struct s_stack
+{
+	int					value;
+	int					pos;
+	int					push_cost;
+	int					above_median;
+	struct s_stack		*target;
+	struct s_stack		*prev;
+	struct s_stack		*next;
+}	t_stack;
+'''
 
 ## How Push_swap Works
 
-## What algorithm i used
+
+## What Algorithm I Used
 I personnaly decieded to use the **Turk algorithm**.
 
 
@@ -83,3 +102,4 @@ I personnaly decieded to use the **Turk algorithm**.
 ## Conclusion
 
 ...
+
