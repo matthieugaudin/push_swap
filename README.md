@@ -119,21 +119,7 @@ I personnaly decieded to use the **Turk algorithm**. Here's a short explaination
 - Then, the program calculates the **median position** to determine the most efficient rotation:  
   - If the node is below the median → perform `rra`.  
   - If the node is above the median → perform `ra`.  
-- Finally, the **minimum node in stack `a`** is rotated to the top, completing the sorting process.  
-
-When only three nodes remain in stack a, a special sort is applied to order them in ascending order.
-
-For each node in stack b, the algorithm finds its target node in stack a, which is the closest larger node, or the minimum node if no larger one exists.
-
-Then, the program calculates the median position to determine the most efficient rotation:
-
-If the node is below the median → perform rra.
-
-If the node is above the median → perform ra.
-
-Finally, the minimum node in stack a is rotated to the top, completing the sorting process.
-
-+ visualisator
+- Finally, the **minimum node in stack `a`** is rotated to the top, completing the sorting process.
 
 
 ## Conclusion
