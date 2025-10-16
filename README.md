@@ -8,24 +8,24 @@ The goal is to arrange the numbers in ascending order with the fewest moves poss
 The project restricts you to a small set of predefined operations that manipulate the two stacks — A and B.
 Each operation affects one or both stacks according to the following rules:
 
-**Push**
+`Push`
 → Moves the top element from one stack to the other.  
 pa : Push the top of B onto A.  
 pb : Push the top of A onto B.  
 
-**Swap**
+`Swap`
 → Swaps the first two elements at the top of a stack.  
 sa : Swap the top two elements of A.  
 sb : Swap the top two elements of B.  
 ss : Perform sa and sb simultaneously.  
 
-**Rotate**
+`Rotate`
 → The top element becomes the last one.  
 ra : Rotate stack A.  
 rb : Rotate stack B.  
 rr : Perform ra and rb simultaneously.  
 
-**Reverse Rotate**
+`Reverse Rotate`
 → The bottom element becomes the first one.  
 rra : Reverse rotate stack A.  
 rrb : Reverse rotate stack B.  
