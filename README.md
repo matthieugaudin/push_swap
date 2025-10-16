@@ -145,7 +145,7 @@ make bonus  # Compile the checker
 -> KO (stacks are differents)
 ```
 
-## Conclusion
+## Conclusion  
 
-...
+I really enjoyed this project because it made me more comfortable with linked list management and helped me understand how to implement an algorithm. If you have any questions or need more details, feel free to contact me.
 
