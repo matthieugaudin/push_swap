@@ -40,7 +40,7 @@ push_swap
 ├── include
 ├── libft
 ├── src
-│   ├── algo # implmentation of the algorithm
+│   ├── algo # implementation of the algorithm
 │   ├── moves # all stack operations
 │   ├── utils # utility functions
 │   └── main.c
@@ -74,10 +74,12 @@ make bonus  # Compile the checker
 ```
 
 ## Stack implmentation
+
 First, to understand the algorithm, let's see how i represented The stack. Each stack is a set of nodes, so i decieded
 to use a link list to implement the stacks A and B. Each node is composed of different useful data for the sets operations.
-Here's the structure i chosed to use.
-'''
+Here's the structure i chosed to use.  
+
+```
 typedef struct s_stack
 {
 	int					value;
@@ -88,7 +90,8 @@ typedef struct s_stack
 	struct s_stack		*prev;
 	struct s_stack		*next;
 }	t_stack;
-'''
+```
+
 
 ## How Push_swap Works
 
