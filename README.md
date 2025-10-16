@@ -1,8 +1,35 @@
 ## Project Overview
 
 Push_swap is a 42 School project that involves sorting a stack of integers using two stacks and a limited set of operations.
-The goal is to arrange the numbers in ascending order with the fewest moves possible.
+The goal is to arrange the numbers in ascending order with the fewest moves possible. The choice of the algorithm was totally free.
 
+## Allowed stacks operations
+
+The project restricts you to a small set of predefined operations that manipulate the two stacks — A and B.
+Each operation affects one or both stacks according to the following rules:
+
+**Push**
+→ Moves the top element from one stack to the other.
+pa : Push the top of B onto A.
+pb : Push the top of A onto B.
+
+**Swap**
+→ Swaps the first two elements at the top of a stack.
+sa : Swap the top two elements of A.
+sb : Swap the top two elements of B.
+ss : Perform sa and sb simultaneously.
+
+**Rotate**
+→ The top element becomes the last one.
+ra : Rotate stack A.
+rb : Rotate stack B.
+rr : Perform ra and rb simultaneously.
+
+**Reverse Rotate**
+→ The bottom element becomes the first one.
+rra : Reverse rotate stack A.
+rrb : Reverse rotate stack B.
+rrr : Perform rra and rrb simultaneously.
 
 ## Project Structure
 
@@ -12,9 +39,9 @@ push_swap
 ├── include
 ├── libft
 ├── src
-│   ├── algo
-│   ├── moves
-│   ├── utils
+│   ├── algo # implmentation of the algorithm
+│   ├── moves # all stack operations
+│   ├── utils # utility functions
 │   └── main.c
 ├── Makefile
 └── README.md 
@@ -31,24 +58,26 @@ cd push_swap
 
 2. Compile the project
 ```bash
-make
+make        # Compile push_swap
+make bonus  # Compile the checker
 ```
 
-3. Run the shell
+3. Run the sorter
 ```bash
-./
+./push_swap 4 2 1 3
 ```
-
-4. Run the sorter
-  ...
 
 6. Launch the checker
-   ...
+
 
 
 ## How Push_swap Works
 
-...
+## What algorithm i used
+I personnaly decieded to use the **Turk algorithm**.
+
+
++ visualisator
 
 
 ## Conclusion
