@@ -112,7 +112,8 @@ make        # Compile push_swap
 make bonus  # Compile the checker
 ```
 
-3. Run the sorter  
+3. Run the sorter
+  
 `Invalid values`  
 ```bash
 ./push_swap 1 ++2 3
