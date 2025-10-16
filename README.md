@@ -10,7 +10,6 @@ Each operation affects one or both stacks according to the following rules:
 
 **Push**
 → Moves the top element from one stack to the other.
-
 pa : Push the top of B onto A.
 pb : Push the top of A onto B.
 
