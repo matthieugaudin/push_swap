@@ -75,9 +75,7 @@ make bonus  # Compile the checker
 
 ## Stack implmentation
 
-First, to understand the algorithm, let's see how i represented The stack. Each stack is a set of nodes, so i decieded
-to use a link list to implement the stacks A and B. Each node is composed of different useful data for the sets operations.
-Here's the structure i chosed to use.  
+First, to understand the algorithm, let’s look at how the stacks are represented. Each stack is implemented as a linked list of nodes, which allows efficient manipulation. Each node contains several pieces of data useful for the algorithm.
 
 ```bash
 typedef struct s_stack
@@ -95,9 +93,17 @@ typedef struct s_stack
 
 ## How Push_swap Works
 
+- the input data is parsed to check errors (signes, duplcate values, integer overflow, no-digit, etc.)
+- each node is allocated in the heap and it's data is fulfilled
+- the program doesn't compute the algorithm is the set of number is already sorted
+- special sorts are performed if there are only 2 or 3 numbers
+- the **Turk algorithm** is performed
+- heap memory that has been allocated is freed
+
 
 ## What Algorithm I Used
-I personnaly decieded to use the **Turk algorithm**.
+I personnaly decieded to use the **Turk algorithm**. Here's a short explaination of it.
+- d
 
 
 + visualisator
