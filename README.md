@@ -52,7 +52,7 @@ rrr : Perform rra and rrb simultaneously.
 
 ## Stack implmentation
 
-First, to understand the algorithm, let’s look at how the stacks are represented. Each stack is implemented as a linked list of nodes, which allows efficient manipulation. Each node contains several pieces of data useful for the algorithm.
+First, to understand the algorithm, let’s look at how the stacks are represented. Each stack is implemented as a linked list of nodes, which allows efficient manipulation. Each node contains several pieces of data useful for the algorithm.  
 
 ```bash
 typedef struct s_stack
@@ -112,9 +112,9 @@ make        # Compile push_swap
 make bonus  # Compile the checker
 ```
 
-3. Run the sorter
+3. Run the sorter  
+`Invalid values`  
 ```bash
-`Invalid values`
 ./push_swap 1 ++2 3
 ./push_swap 1 2 3a
 ./push_swap 1.5 2 3
@@ -124,7 +124,9 @@ make bonus  # Compile the checker
 ./push_swap -2147483649
 ./push_swap ""
 ./push_swap "1    2    "
-`Valid values`
+```
+`Valid values`  
+```bash
 ./push_swap 4 3 2 1
 ./push_swap 2 4 3 1
 ./push_swap 3 8 5 2 9 1
