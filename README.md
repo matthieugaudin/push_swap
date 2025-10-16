@@ -79,7 +79,7 @@ First, to understand the algorithm, let's see how i represented The stack. Each 
 to use a link list to implement the stacks A and B. Each node is composed of different useful data for the sets operations.
 Here's the structure i chosed to use.  
 
-```md
+```bash
 typedef struct s_stack
 {
 	int					value;
