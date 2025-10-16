@@ -3,6 +3,24 @@
 Push_swap is a 42 School project that involves sorting a stack of integers using two stacks and a limited set of operations.
 The goal is to arrange the numbers in ascending order with the fewest moves possible. The choice of the algorithm was totally free.
 
+
+## Project Structure
+
+```md
+push_swap
+├── checker_bonus
+├── include
+├── libft
+├── src
+│   ├── algo # implementation of the algorithm
+│   ├── moves # all stack operations
+│   ├── utils # utility functions
+│   └── main.c
+├── Makefile
+└── README.md 
+```
+
+
 ## Allowed stacks operations
 
 The project restricts you to a small set of predefined operations that manipulate the two stacks — A and B.
@@ -31,47 +49,6 @@ rra : Reverse rotate stack A.
 rrb : Reverse rotate stack B.  
 rrr : Perform rra and rrb simultaneously.  
 
-
-## Project Structure
-
-```md
-push_swap
-├── checker_bonus
-├── include
-├── libft
-├── src
-│   ├── algo # implementation of the algorithm
-│   ├── moves # all stack operations
-│   ├── utils # utility functions
-│   └── main.c
-├── Makefile
-└── README.md 
-```
-
-
-## Installation and Usage
-
-1. Clone the repository:
-```bash
-git clone https://github.com/matthieugaudin/push_swap.git
-cd push_swap
-```
-
-2. Compile the project
-```bash
-make        # Compile push_swap
-make bonus  # Compile the checker
-```
-
-3. Run the sorter
-```bash
-./push_swap 4 2 1 3
-```
-
-6. Launch the checker
-```bash
-./checker ...
-```
 
 ## Stack implmentation
 
@@ -121,6 +98,49 @@ I personnaly decieded to use the **Turk algorithm**. Here's a short explaination
   - If the node is above the median → perform `ra`.  
 - Finally, the **minimum node in stack `a`** is rotated to the top, completing the sorting process.
 
+## Installation and Usage
+
+1. Clone the repository:
+```bash
+git clone https://github.com/matthieugaudin/push_swap.git
+cd push_swap
+```
+
+2. Compile the project
+```bash
+make        # Compile push_swap
+make bonus  # Compile the checker
+```
+
+3. Run the sorter
+```bash
+`Invalid values`
+./push_swap 1 ++2 3
+./push_swap 1 2 3a
+./push_swap 1.5 2 3
+./push_swap 1 2 3 2
+./push_swap 42 42
+./push_swap 2147483648
+./push_swap -2147483649
+./push_swap ""
+./push_swap "1    2    "
+`Valid values`
+./push_swap 4 3 2 1
+./push_swap 2 4 3 1
+./push_swap 3 8 5 2 9 1
+./push_swap 10 9 8 7 6 5 4 3 2 1
+./push_swap 1 5 2 8 3 6 4 7
+```
+
+6. Launch the checker
+```bash
+./push_swap 3 8 5 2 9 1 | ./checker 3 8 5 2 9 1
+-> OK
+./push_swap 10 9 8 7 6 5 4 3 2 1 | ./checker 10 9 8 7 6 5 4 3 2 1
+-> OK
+./push_swap 1 5 2 8 3 6 4 7 | ./checker 1 5 2 8 3 6 4
+-> KO (stacks are differents)
+```
 
 ## Conclusion
 
