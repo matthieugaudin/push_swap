@@ -9,9 +9,9 @@ The project restricts you to a small set of predefined operations that manipulat
 Each operation affects one or both stacks according to the following rules:
 
 **Push**
-→ Moves the top element from one stack to the other.
-pa : Push the top of B onto A.
-pb : Push the top of A onto B.
+→ Moves the top element from one stack to the other.  
+pa : Push the top of B onto A.  
+pb : Push the top of A onto B.  
 
 **Swap**
 → Swaps the first two elements at the top of a stack.
