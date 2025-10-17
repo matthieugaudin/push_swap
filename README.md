@@ -145,6 +145,10 @@ make bonus  # Compile the checker
 -> KO (stacks are differents)
 ```
 
+## Algorithm Visualizer
+
+[🎥 Watch the demo video](assets/video.mp4)
+
 ## Conclusion  
 
 I really enjoyed this project because it made me more comfortable with linked list management and helped me understand how to implement an algorithm. If you have any questions or need more details, feel free to contact me.
