@@ -145,9 +145,6 @@ make bonus  # Compile the checker
 -> KO (stacks are differents)
 ```
 
-## Algorithm Visualizer
-
-[🎥 Watch the demo video](assets/push_swap_visualizer.mp4)
 
 ## Conclusion  
 
