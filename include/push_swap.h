@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: mgaudin <mgaudin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 16:55:53 by mgaudin           #+#    #+#             */
-/*   Updated: 2025/01/14 10:44:00 by mgaudin          ###   ########.fr       */
+/*   Updated: 2025/10/17 16:36:22 by mgaudin          ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -28,9 +28,13 @@ typedef struct s_stack
 	struct s_stack		*next;
 }	t_stack;
 
+
+/*==========ALGORITHMS==========*/
 void	sort_stack(t_stack **a, t_stack **b);
 void	sort_three(t_stack **a);
 void	reset_data(t_stack *a, t_stack *b, char stack_name);
+
+/*==========MOVES==========*/
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
 void	rra(t_stack **a, int show_msg);
@@ -44,6 +48,8 @@ void	sb(t_stack **b, int show_msg);
 void	ss(t_stack **a, t_stack **b);
 void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *to_move);
 void	rotate_both(t_stack **a, t_stack **b, t_stack *to_move);
+
+/*==========UTILS==========*/
 void	free_stack_a(t_stack **a);
 void	free_tab(char **tab);
 t_stack	*get_last(t_stack **head);
