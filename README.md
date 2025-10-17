@@ -50,7 +50,7 @@ rrb : Reverse rotate stack B.
 rrr : Perform rra and rrb simultaneously.  
 
 
-## Stack implmentation
+## Stack implementation
 
 First, to understand the algorithm, let’s look at how the stacks are represented. Each stack is implemented as a linked list of nodes, which allows efficient manipulation. Each node contains several pieces of data useful for the algorithm.  
 
@@ -80,7 +80,7 @@ typedef struct s_stack
 
 ## What Algorithm I Used  
 
-I personnaly decieded to use the **Turk algorithm**. Here's a short explaination of it.  
+I personally decieded to use the **Turk algorithm**. Here's a complete explanation of it.  
 
 - The program begins with all the nodes in stack `a`.  
 - Nodes are pushed from stack `a` to stack `b` until only three nodes remain in stack `a`.  
@@ -142,7 +142,7 @@ make bonus  # Compile the checker
 ./push_swap 10 9 8 7 6 5 4 3 2 1 | ./checker 10 9 8 7 6 5 4 3 2 1
 -> OK
 ./push_swap 1 5 2 8 3 6 4 7 | ./checker 1 5 2 8 3 6 4
--> KO (stacks are differents)
+-> KO (stacks are different)
 ```
 
 
