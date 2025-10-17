@@ -147,7 +147,7 @@ make bonus  # Compile the checker
 
 ## Algorithm Visualizer
 
-[🎥 Watch the demo video](assets/video.mp4)
+[🎥 Watch the demo video](assets/push_swap_visualizer.mp4)
 
 ## Conclusion  
 
